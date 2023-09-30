@@ -1,0 +1,8 @@
+.cardIcon{
+    color:var(--primary-color-text);
+    border: var(--surface-border) 7px solid;
+    background: var(--surface-a);
+    width: 150px;
+    max-width: 150px;
+    height: 150px;
+}
