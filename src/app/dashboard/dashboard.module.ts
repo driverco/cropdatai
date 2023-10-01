@@ -17,6 +17,7 @@ import { BadgeModule } from 'primeng/badge';
 import { ImageModule } from 'primeng/image';
 import { MapListComponent } from './components/maps/maplist.component';
 import { MapComponent } from './components/map/map.component';
+import { AccordionModule } from 'primeng/accordion';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MapComponent } from './components/map/map.component';
     DataViewModule,
     AvatarModule,
     BadgeModule,
-    ImageModule
+    ImageModule,
+    AccordionModule
 
   ],
   providers: [NotificationsService, MapsService],

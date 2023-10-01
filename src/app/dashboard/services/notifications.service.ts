@@ -37,7 +37,7 @@ export class NotificationsService {
             {
                 id: '1002',
                 code: 'f230fh0g3',
-                name: 'Se ha detectado una nueva plage en su región',
+                name: 'Se ha detectado una nueva plaga en su región',
                 description: 'Estimado Agricultor, la mosca de la fruta ha sido detectada en la región y puede afectar sus cultivos',
                 date: '16-sep-2023',
                 color:"#2196F3",

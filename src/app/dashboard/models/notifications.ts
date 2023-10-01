@@ -7,4 +7,5 @@ export interface Notification {
     date?: string;
     color?: string;
     icon?: string;
+    routerLink?: string;
 }

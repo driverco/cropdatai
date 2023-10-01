@@ -1,4 +1,4 @@
-@import "primeng/resources/themes/lara-dark-teal/theme.css";
+@import "primeng/resources/themes/soho-dark/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 @import "primeflex/primeflex.css";
@@ -25,4 +25,7 @@ body {
 .noDecorator {
     text-decoration: none !important;
     color: var(--primary-color-text);
+}
+.p-accordion-header-link{
+    background-color: var(--surface-a);
 }
