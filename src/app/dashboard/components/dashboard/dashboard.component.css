@@ -1,5 +1,4 @@
 .graphIcon{
-    color:var(--primary-color-text);
     border: var(--surface-border) 3px solid;
     background: var(--surface-b);
     margin: 0;

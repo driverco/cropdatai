@@ -1,5 +1,5 @@
 .cardIcon{
-    color:var(--primary-color-text);
+    color:var(--text-color);
     border: var(--surface-border) 7px solid;
     background: var(--surface-a);
     width: 150px;

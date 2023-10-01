@@ -19,7 +19,7 @@ export class DashboardComponent {
     datasets: [
       {
         data: [16],
-        backgroundColor: ['rgba(255, 13, 13, 1)'],
+        backgroundColor: ['rgba(255, 132, 132, 0.8)'],
         borderColor: ['rgb(255, 40, 40)'],
         borderWidth: 1
       }
@@ -30,7 +30,7 @@ export class DashboardComponent {
     datasets: [
       {
         data: ["30"],
-        backgroundColor: ['rgba(13, 13, 255, 1)'],
+        backgroundColor: ['rgba(13, 13, 255, 0.6)'],
         borderColor: ['rgb(40, 40, 255)'],
         borderWidth: 1
       }

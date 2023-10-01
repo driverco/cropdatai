@@ -1,8 +1,7 @@
-@import "primeng/resources/themes/soho-dark/theme.css";
+@import "WRCTheme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 @import "primeflex/primeflex.css";
-@import "primeflex/themes/primeone-light.css";
 
 body {
     font-family: var(--font-family);
@@ -24,7 +23,12 @@ body {
 
 .noDecorator {
     text-decoration: none !important;
-    color: var(--primary-color-text);
+}
+.appName {
+    color: var(--text-color);
+}
+.titles{
+    color: var(--surface-dis);
 }
 .p-accordion-header-link{
     background-color: var(--surface-a);

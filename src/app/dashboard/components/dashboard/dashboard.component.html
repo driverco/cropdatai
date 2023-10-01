@@ -1,10 +1,10 @@
-<div class="flex flex-wrap card-container">
+<div class="flex flex-wrap card-container ">
     <ng-template ngFor let-graph [ngForOf]="items">
-        <div class="flex flex-wrap graphIcon w-9rem md:w-15rem h-9rem md:h-15rem m-1">
-            <div class="flex max-h-2rem min-w-full text-sm font-light">
+        <div class="flex flex-wrap graphIcon  w-9rem md:w-15rem h-9rem md:h-15rem m-1 border-round-lg ">
+            <div class="flex max-h-2rem min-w-full text-sm font-normal titles">
                 {{graph.name}}
             </div>
-            <div class="graphContainer">
+            <div class="graphContainer titles">
                 <p-chart type="bar" [data]="graph.basicData" [options]="graph.basicOptions" width="100%" height="100%" ></p-chart>
             </div>
         </div>
