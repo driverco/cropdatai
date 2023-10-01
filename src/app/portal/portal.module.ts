@@ -12,6 +12,7 @@ import { BadgeModule } from 'primeng/badge';
 import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogModule } from 'primeng/dialog';
+import { LinksService } from './services/links.service';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { DialogModule } from 'primeng/dialog';
     DialogModule
     
   ],
-  providers:[ConfirmationService, MessageService ],
+  providers:[ConfirmationService, MessageService ,LinksService],
   exports: [PortalComponent]
 })
 export class PortalModule {  }

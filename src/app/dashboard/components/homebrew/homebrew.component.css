@@ -3,6 +3,10 @@
     border: var(--surface-border) 7px solid;
     background: var(--surface-a);
     width: 150px;
+    min-width: 150px;
     max-width: 150px;
     height: 150px;
+    max-height: 150px;
+    margin: 0;
+    display: block;
 }

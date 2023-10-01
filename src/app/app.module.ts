@@ -16,7 +16,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
     BrowserModule,
     PortalModule,
     DashboardModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {
+      bindToComponentInputs: true // <-- enable this feature
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

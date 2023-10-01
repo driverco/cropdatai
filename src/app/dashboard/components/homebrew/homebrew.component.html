@@ -1,25 +1,13 @@
-<div class="flex w-100 justify-content-center  md:h-30rem "  >
+<div class="flex w-100 justify-content-center  md:h-30rem ">
     <div style="max-width: 700px" class="flex flex-wrap align-items-end h-auto">
-
         <div class="grid max-h-20rem ">
-            <div class="col cardIcon border-round-lg m-2 mr-3 text-center">
-                <i class="pi pi-bell" pBadge value="1" severity="danger" style="font-size: 7rem"></i>
-            </div>
-            <div class="col cardIcon border-round-lg m-2 mr-3 text-center">
-                <i class="pi pi-bell" pBadge value="1" severity="danger" style="font-size: 7rem"></i>
-            </div>
-            <div class="col cardIcon border-round-lg m-2 mr-3 text-center">
-                <i class="pi pi-bell" pBadge value="1" severity="danger" style="font-size: 7rem"></i>
-            </div>
-            <div class="col cardIcon border-round-lg m-2 mr-3 text-center">
-                <i class="pi pi-bell" pBadge value="1" severity="danger" style="font-size: 7rem"></i>
-            </div>
-            <div class="col cardIcon border-round-lg m-2 mr-3 text-center">
-                <i class="pi pi-bell" pBadge value="1" severity="danger" style="font-size: 7rem"></i>
-            </div>
-            <div class="col cardIcon border-round-lg m-2 mr-3 text-center">
-                <i class="pi pi-bell" pBadge value="1" severity="danger" style="font-size: 7rem"></i>
-            </div>
+            <ng-template ngFor let-item [ngForOf]="items" let-i="index">
+                <a routerLink={{item.routerLink}}>
+                    <div class="col cardIcon border-round-lg m-2 mr-3 text-center">
+                        <i class='{{item.icon + " text-8xl pt-2" }}'></i>
+                    </div>
+                </a>
+            </ng-template>
         </div>
     </div>
 </div>

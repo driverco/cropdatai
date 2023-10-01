@@ -1,0 +1,20 @@
+<p-dataView #dv [value]="maps">
+    <ng-template let-map pTemplate="listItem">
+        <div class="col-12">
+            <a routerLink={{map.id}} class="noDecorator">
+                <div class="flex flex-row flex-column align-items-stretch p-4 ">
+                    <div class="flex flex-row justify-content-between ">
+                        <div class="flex flex-row align-items-center gap-3">
+                            <p-image src="assets/minimap.jpg" alt='{{ map.name }}' width="50" class="flex"></p-image>
+                            <div class=" flex text-2xl font-bold noDecorator">{{ map.name }}</div>
+                        </div>
+                        <div class="flex sm:flex-column align-items-center sm:align-items-end ">
+                            <p-badge value={{map.messages}}
+                                [severity]="map.messages>0 ? 'danger' : 'success'"></p-badge>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </ng-template>
+</p-dataView>

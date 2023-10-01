@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/api';
+import { LinksService } from '../../services/links.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,29 +11,20 @@ import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/a
 })
 export class MenuComponent {
 
-  constructor() { }
+  constructor(private linksService: LinksService, private router: Router) { }
 
   items: MenuItem[] | undefined;
   ngOnInit() {
-    this.items = [
-      {
-        label: 'Dashboard',
-        icon: 'pi pi-fw pi-th-large',
-        routerLink: "/dashboard"
-      },
-      {
-        label: 'Notificaciones',
-        icon: 'pi pi-fw pi-bell',
-        routerLink: "/notifications"
-      },
-    ];
-
+    this.linksService.getLinks().then((links) => (this.items = links));
   }
 
   visible: boolean = false;
-
   showDialog() {
-      this.visible = true;
+    this.visible = true;
+  }
+  closeDialog(mapId:string) {
+    this.visible = false;
+    this.router.navigate(['/maps', mapId])
   }
 
 }

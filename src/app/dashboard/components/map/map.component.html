@@ -1,0 +1,11 @@
+<p-card header={{map.name}}>
+    <ng-template pTemplate="header" class="flex w-screen surface-200 text-center">
+        <p-image src="assets/mapDemo.png" alt='{{ map.name }}' class="flex " [style]="{'margin':'0 auto'}"></p-image>
+    </ng-template>
+
+    
+    <ng-template pTemplate="footer">
+        <p-button label="Cancelar" icon="pi pi-times" styleClass="p-button-secondary" routerLink="/maps"
+            [style]="{ 'margin-left': '.5em' }"></p-button>
+    </ng-template>
+</p-card>

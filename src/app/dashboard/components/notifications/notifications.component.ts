@@ -7,14 +7,14 @@ import { Notification } from '../../models/notifications';
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.css']
 })
-export class NotificationsComponent  implements OnInit {
+export class NotificationsComponent implements OnInit {
   notifications!: Notification[];
 
-  constructor(private notificationsService: NotificationsService) {}
+  constructor(private notificationsService: NotificationsService) { }
 
   ngOnInit() {
     this.notificationsService.getNotificationsSmall().then((notifs) => (this.notifications = notifs));
-}
+  }
 
 }
 
