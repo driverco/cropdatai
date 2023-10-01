@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, numberAttribute } from '@angular/core';
 import { MapsService } from '../../services/maps.service';
 import { Map } from '../../models/maps';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class MapComponent implements OnInit {
   map!: Map;
   @Input() id = '0';
 
-  constructor(private mapsService: MapsService) {  
+  constructor(private mapsService: MapsService, private location: Location) {  
     this.map = {
         id: '0',
         code: '0',
@@ -21,9 +22,6 @@ export class MapComponent implements OnInit {
         messages:0
     }
   }
-
-
-
 
   ngOnInit() {
     
@@ -35,6 +33,9 @@ export class MapComponent implements OnInit {
 
   }
 
+  back(): void {
+    this.location.back()
+  }
 }
 
 

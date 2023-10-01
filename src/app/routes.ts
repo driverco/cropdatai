@@ -5,11 +5,12 @@ import { NotificationsComponent } from './dashboard/components/notifications/not
 import { HomebrewComponent } from './dashboard/components/homebrew/homebrew.component';
 import { MapListComponent } from './dashboard/components/maps/maplist.component';
 import { MapComponent } from './dashboard/components/map/map.component';
+import { DashboardComponent } from './dashboard/components/dashboard/dashboard.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomebrewComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'dashboard', component: HomeComponent },
+    { path: 'dashboard', component: DashboardComponent },
     { path: 'notifications', component: NotificationsComponent },
     { path: 'maps', component: MapListComponent },
     { path: 'maps/:id', component: MapComponent },

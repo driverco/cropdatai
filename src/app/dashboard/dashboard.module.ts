@@ -6,8 +6,6 @@ import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { AlertsComponent } from './components/alerts/alerts.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
-import { OrderListModule } from 'primeng/orderlist';
-import { DragDropModule } from 'primeng/dragdrop';
 import { DataViewModule } from 'primeng/dataview';
 import { NotificationsService } from './services/notifications.service';
 import { AvatarModule } from 'primeng/avatar';
@@ -18,6 +16,8 @@ import { ImageModule } from 'primeng/image';
 import { MapListComponent } from './components/maps/maplist.component';
 import { MapComponent } from './components/map/map.component';
 import { AccordionModule } from 'primeng/accordion';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { AccordionModule } from 'primeng/accordion';
     NotificationsComponent,
     HomebrewComponent,
     MapListComponent,
-    MapComponent
+    MapComponent,
+    DashboardComponent
     ],
   imports: [
     CommonModule,
@@ -33,16 +34,14 @@ import { AccordionModule } from 'primeng/accordion';
     CardModule,
     ButtonModule,
     MenubarModule,
-    OrderListModule,
-    DragDropModule,
     DataViewModule,
     AvatarModule,
     BadgeModule,
     ImageModule,
-    AccordionModule
-
+    AccordionModule,
+    ChartModule
   ],
   providers: [NotificationsService, MapsService],
-  exports: [AlertsComponent, NotificationsComponent, HomebrewComponent,  MapListComponent, MapComponent]
+  exports: [AlertsComponent, NotificationsComponent, HomebrewComponent,  MapListComponent, MapComponent, DashboardComponent]
 })
-export class DashboardModule { }
+export class DashboardModule { } 
