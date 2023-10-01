@@ -21,7 +21,7 @@ export class SensorsService {
         for (const mapId of this.mapsIds) {
             for (var sensor = 0; sensor < sensorsCount[this.mapsIds.indexOf(mapId)]; sensor++) {
                 outputVar.push({
-                    id: mapId + '-0' + sensor,
+                    id: mapId + '-'+(type==="TEMP"?"T":"H")+'0' + sensor,
                     mapId: mapId,
                     type: type,
                     label: (type==="TEMP"?'Temperatura (°C)':'Humedad (%)'),

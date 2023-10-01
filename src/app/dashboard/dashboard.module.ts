@@ -4,7 +4,6 @@ import { SharedModule } from 'primeng/api';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
-import { AlertsComponent } from './components/alerts/alerts.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { DataViewModule } from 'primeng/dataview';
 import { NotificationsService } from './services/notifications.service';
@@ -19,15 +18,17 @@ import { AccordionModule } from 'primeng/accordion';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChartModule } from 'primeng/chart';
 import { SensorsService } from './services/sensors.service';
+import { PanelModule } from 'primeng/panel';
+import { NewsComponent } from './components/news/news.component';
 
 @NgModule({
   declarations: [
-    AlertsComponent,
     NotificationsComponent,
     HomebrewComponent,
     MapListComponent,
     MapComponent,
-    DashboardComponent
+    DashboardComponent,
+    NewsComponent
     ],
   imports: [
     CommonModule,
@@ -40,9 +41,10 @@ import { SensorsService } from './services/sensors.service';
     BadgeModule,
     ImageModule,
     AccordionModule,
-    ChartModule
+    ChartModule,
+    PanelModule
   ],
   providers: [NotificationsService, MapsService,SensorsService],
-  exports: [AlertsComponent, NotificationsComponent, HomebrewComponent,  MapListComponent, MapComponent, DashboardComponent]
+  exports: [ NotificationsComponent, HomebrewComponent,  MapListComponent, MapComponent, DashboardComponent, NewsComponent]
 })
 export class DashboardModule { } 

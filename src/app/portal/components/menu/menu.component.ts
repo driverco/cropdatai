@@ -24,7 +24,7 @@ export class MenuComponent {
   }
   closeDialog(mapId:string) {
     this.visible = false;
-    this.router.navigate(['/maps', mapId])
+    this.router.navigate(['/maps/'+mapId])
   }
 
 }

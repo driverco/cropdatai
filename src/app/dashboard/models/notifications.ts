@@ -1,7 +1,7 @@
 
 export interface Notification {
     id?: string;
-    code?: string;
+    mapId?:string;
     name?: string;
     description?: string;
     date?: string;

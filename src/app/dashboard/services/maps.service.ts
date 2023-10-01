@@ -8,7 +8,7 @@ export class MapsService {
                 id: '11',
                 code: '1',
                 name: 'Cultivo rosas 1',
-                messages:3
+                messages:2
             },
             {
                 id: '12',
@@ -20,7 +20,7 @@ export class MapsService {
                 id: '13',
                 code: '3',
                 name: 'Cultivo rosas 3',
-                messages:0
+                messages:1
             },
             {
                 id: '14',

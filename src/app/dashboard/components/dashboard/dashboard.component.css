@@ -1,6 +1,6 @@
 .graphIcon{
     border: var(--surface-border) 3px solid;
-    background: var(--surface-b);
+    background: rgba(240,240,240,0.85);
     margin: 0;
     display: block;
 }

@@ -1,0 +1,9 @@
+.graphIcon{
+    border: var(--surface-a) 3px solid;
+    margin: 0;
+    display: block;
+}
+.graphContainer{
+    width:  100% !important;
+    height: 85% !important;
+}

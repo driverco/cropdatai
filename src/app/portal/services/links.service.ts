@@ -18,7 +18,7 @@ export class LinksService {
             },
             {
                 id: '1002',
-                label: 'Mapas',
+                label: 'Cultivos',
                 icon: 'pi pi-fw pi-map',
                 routerLink: "/maps"
             },

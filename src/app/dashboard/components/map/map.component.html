@@ -1,11 +1,44 @@
-<p-card header={{map.name}}>
-    <ng-template pTemplate="header" class="flex w-screen surface-200 text-center">
-        <p-image src="assets/mapDemo.png" alt='{{ map.name }}' class="flex " [style]="{'margin':'0 auto'}"></p-image>
-    </ng-template>
+<p-panel header={{map.name}} class="p-0">
+    <p-panel header="Mapa" [toggleable]="true" class="m-0">
+        <div class="flex flex-wrap w-full flex-grow-1">
+            <p-image src="assets/mapDemo.png" alt='{{ map.name }}' class=" " width="100%"></p-image>
+        </div>
+    </p-panel>
+    <p-panel header="Sensores" [toggleable]="true" class="m-0">
+        <div class="flex flex-wrap card-container ">
+            <ng-template ngFor let-graph [ngForOf]="sensorItems">
+                <div class="flex flex-wrap graphIcon  w-9rem md:w-15rem h-9rem md:h-15rem m-1 border-round-lg "
+                    routerLink="{{'/maps/'+graph.mapId}}">
+                    <div class="graphContainer titles">
+                        <p-chart type="bar" [data]="graph.basicData" [options]="graph.basicOptions" width="100%"
+                            height="100%"></p-chart>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </p-panel>
 
-    
+    <p-panel header="Notificaciones" [toggleable]="true" class="m-0">
+        <p-accordion [activeIndex]="0">
+            <ng-template ngFor let-notification [ngForOf]="notifications">
+                <p-accordionTab>
+                    <ng-template pTemplate="header" class="flex">
+                        <p-avatar icon="pi {{notification.icon}}" styleClass="mr-2" shape="circle"
+                            [style]="{ 'background-color': notification.color, color: '#ffffff' }"></p-avatar>
+                        <span class="vertical-align-middle">{{notification.name}}</span>
+                        <div class="text-xs vertical-align-top text-right hidden absolute right-0 pr-3 md:block ">{{
+                            notification.date }}</div>
+                    </ng-template>
+                    <div class="text-xs vertical-align-top text-right md:hidden">{{ notification.date }}</div>
+                    <p>
+                        {{ notification.description }}
+                    </p>
+                </p-accordionTab>
+            </ng-template>
+        </p-accordion>
+    </p-panel>
     <ng-template pTemplate="footer">
-        <p-button label="Cancelar" icon="pi pi-times" styleClass="p-button-secondary" (click)="back()"
+        <p-button label="Cancelar" icon="pi pi-times" (click)="back()"
             [style]="{ 'margin-left': '.5em' }"></p-button>
     </ng-template>
-</p-card> 
+</p-panel>

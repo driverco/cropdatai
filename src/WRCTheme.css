@@ -3023,7 +3023,7 @@
     font-weight: 700;
   }
   .p-dataview .p-dataview-content {
-    background: #ffffff;
+    background: rgba(240,240,240,0.8);
     color: var(--surface-dis);
     border: 0 none;
     padding: 0;
@@ -4297,9 +4297,9 @@
     padding: 0.857rem 1rem;
   }
   .p-panel .p-panel-content {
-    padding: 0.571rem 1rem;
+    padding: 0.2rem;
     border: 1px solid #c8c8c8;
-    background: #ffffff;
+    background: rgba(240,240,240,0.8);
     color: var(--surface-dis);
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
