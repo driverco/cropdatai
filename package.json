@@ -28,6 +28,7 @@
     "primeng": "^16.4.1",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.2",
+    "underscore": "^1.13.6",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
@@ -36,6 +37,7 @@
     "@angular/compiler-cli": "^16.2.7",
     "@types/google.maps": "^3.54.2",
     "@types/jasmine": "~4.3.6",
+    "@types/underscore": "^1.11.9",
     "jasmine-core": "~5.1.1",
     "karma": "~6.4.2",
     "karma-chrome-launcher": "~3.2.0",

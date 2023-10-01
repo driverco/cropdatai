@@ -18,6 +18,7 @@ import { MapComponent } from './components/map/map.component';
 import { AccordionModule } from 'primeng/accordion';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChartModule } from 'primeng/chart';
+import { SensorsService } from './services/sensors.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { ChartModule } from 'primeng/chart';
     AccordionModule,
     ChartModule
   ],
-  providers: [NotificationsService, MapsService],
+  providers: [NotificationsService, MapsService,SensorsService],
   exports: [AlertsComponent, NotificationsComponent, HomebrewComponent,  MapListComponent, MapComponent, DashboardComponent]
 })
 export class DashboardModule { } 

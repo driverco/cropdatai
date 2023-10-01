@@ -30,7 +30,7 @@ export class LinksService {
             },
             {
                 id: '1004',
-                label: 'Configuracion',
+                label: 'Configuración',
                 icon: 'pi pi-fw pi-cog',
                 routerLink: "/config"
             },
