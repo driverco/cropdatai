@@ -6,7 +6,7 @@ import { MapListComponent } from './dashboard/components/maps/maplist.component'
 import { MapComponent } from './dashboard/components/map/map.component';
 import { DashboardComponent } from './dashboard/components/dashboard/dashboard.component';
 import { NewsComponent } from './dashboard/components/news/news.component';
-import { ModelsAIComponent } from './dashboard/components/modelsBoard/modelsAI.component';
+import { ModelsAIComponent } from './dashboard/components/modelsBoard/modelsai.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomebrewComponent },
