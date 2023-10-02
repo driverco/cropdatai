@@ -6,13 +6,13 @@ import * as _ from 'underscore';
 import * as dashUtils from '../../utils';
 import { Map } from '../../models/maps';
 @Component({
-  selector: 'modelsai-modelsai',
-  templateUrl: './modelsai.component.html',
-  styleUrls: ['./modelsai.component.css']
+  selector: 'dashboard-modelspred',
+  templateUrl: './modelspred.component.html',
+  styleUrls: ['./modelspred.component.css']
 })
  
 
-export class ModelsAIComponent {
+export class ModelsPredComponent {
   map!: Map;
   items: any[] = [];
 

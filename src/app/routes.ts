@@ -6,7 +6,7 @@ import { MapListComponent } from './dashboard/components/maps/maplist.component'
 import { MapComponent } from './dashboard/components/map/map.component';
 import { DashboardComponent } from './dashboard/components/dashboard/dashboard.component';
 import { NewsComponent } from './dashboard/components/news/news.component';
-import { ModelsAIComponent } from './dashboard/components/modelsBoard/modelsai.component';
+import { ModelsPredComponent } from './dashboard/components/modelspred/modelspred.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomebrewComponent },
@@ -16,7 +16,7 @@ export const routes: Routes = [
     { path: 'maps', component: MapListComponent },
     { path: 'news', component: NewsComponent },
     { path: 'maps/:mapId', component: MapComponent, pathMatch: 'full'  },
-    { path: 'modelsai/:mapId', component: ModelsAIComponent, pathMatch: 'full'  },
+    { path: 'modelsai/:mapId', component: ModelsPredComponent, pathMatch: 'full'  },
     { path: 'notfound', component: NotFoundComponent },
     { path: '**', redirectTo: '/notfound', pathMatch: 'full' }
 ];
