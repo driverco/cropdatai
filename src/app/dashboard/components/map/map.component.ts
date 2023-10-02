@@ -21,20 +21,12 @@ export class MapComponent implements OnInit {
   map!: Map;
   sensorItems: any[] = [];
   notifications: Notification[] = [];
-  @Input() id = '0';
-
-
-
 
   private _mapId: string = "0";
-    
   @Input() set mapId(id: string) {
-  
      this._mapId = id;
      this.updateMapComponent(this._mapId);
-  
   }
-  
   get mapId(): string {
       return this._mapId;
   }

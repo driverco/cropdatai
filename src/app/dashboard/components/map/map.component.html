@@ -40,5 +40,7 @@
     <ng-template pTemplate="footer">
         <p-button label="Cancelar" icon="pi pi-times" (click)="back()"
             [style]="{ 'margin-left': '.5em' }"></p-button>
+        <p-button label="Modelos Predictivos" icon="pi pi-eye" routerLink="{{'/modelsai/'+ map.id }}"
+            [style]="{ 'margin-left': '.5em' }"></p-button>
     </ng-template>
 </p-panel>

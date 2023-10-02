@@ -20,6 +20,7 @@ import { ChartModule } from 'primeng/chart';
 import { SensorsService } from './services/sensors.service';
 import { PanelModule } from 'primeng/panel';
 import { NewsComponent } from './components/news/news.component';
+import { ModelsAIComponent } from './components/modelsBoard/modelsAI.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +29,9 @@ import { NewsComponent } from './components/news/news.component';
     MapListComponent,
     MapComponent,
     DashboardComponent,
-    NewsComponent
-    ],
+    NewsComponent,
+    ModelsAIComponent
+  ],
   imports: [
     CommonModule,
     SharedModule,
@@ -44,7 +46,7 @@ import { NewsComponent } from './components/news/news.component';
     ChartModule,
     PanelModule
   ],
-  providers: [NotificationsService, MapsService,SensorsService],
-  exports: [ NotificationsComponent, HomebrewComponent,  MapListComponent, MapComponent, DashboardComponent, NewsComponent]
+  providers: [NotificationsService, MapsService, SensorsService],
+  exports: [NotificationsComponent, HomebrewComponent, MapListComponent, MapComponent, DashboardComponent, NewsComponent, ModelsAIComponent]
 })
 export class DashboardModule { } 

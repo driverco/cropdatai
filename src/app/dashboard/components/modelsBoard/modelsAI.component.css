@@ -1,0 +1,11 @@
+.graphIcon{
+    border: var(--surface-border) 3px solid;
+    background: rgba(240,240,240,0.85);
+    margin: 0;
+    display: block;
+    min-height: 80vh !important;
+}
+.graphContainer{
+    width:  100% !important;
+    min-height: 80vh !important;
+}
