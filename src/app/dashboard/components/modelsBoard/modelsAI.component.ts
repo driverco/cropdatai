@@ -10,7 +10,7 @@ import { Map } from '../../models/maps';
   templateUrl: './modelsai.component.html',
   styleUrls: ['./modelsai.component.css']
 })
-
+ 
 
 export class ModelsAIComponent {
   map!: Map;

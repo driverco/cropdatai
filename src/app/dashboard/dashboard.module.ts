@@ -20,7 +20,7 @@ import { ChartModule } from 'primeng/chart';
 import { SensorsService } from './services/sensors.service';
 import { PanelModule } from 'primeng/panel';
 import { NewsComponent } from './components/news/news.component';
-import { ModelsAIComponent } from './components/modelsBoard/modelsAI.component';
+import { ModelsAIComponent } from './components/modelsBoard/modelsai.component';
 
 @NgModule({
   declarations: [
