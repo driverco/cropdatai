@@ -4,12 +4,18 @@
             <a routerLink="home" class="noDecorator appName"> CropdatAI </a>
         </ng-template>
         <ng-template pTemplate="end">
-            <div class="p-2">
-                <i class="pi pi-bell text-2xl" (click)="showDialog()" pBadge value="1" severity="danger"></i>
+            <div class="flex flex-row flex-wrap">
+                <div class="flex-column">
+                    <portal-satisfaction />
+                </div>
+                <div class="p-2 flex-column">
+                    <i class="pi pi-bell text-2xl" (click)="showDialog()" pBadge value="1" severity="danger"></i>
+                </div>
             </div>
 
             <p-dialog [(visible)]="visible" position="top" [style]="{width: '90vw'}">
-                <p-header><p-avatar icon="pi pi-exclamation-triangle" styleClass="mr-2" shape="circle" [style]="{ 'background-color': '#f43333', color: '#ffffff' }"></p-avatar>
+                <p-header><p-avatar icon="pi pi-exclamation-triangle" styleClass="mr-2" shape="circle"
+                        [style]="{ 'background-color': '#f43333', color: '#ffffff' }"></p-avatar>
                     Humedad de cultivo de Rosas 2 Baja
                 </p-header>
                 <p (click)="closeDialog('12')">
