@@ -18,6 +18,7 @@ import { ImageModule } from 'primeng/image';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     ImageModule,
     ConfirmPopupModule,
     ConfirmDialogModule,
-    InputTextareaModule
+    InputTextareaModule,
+    FormsModule
     
   ],
   providers:[ConfirmationService, MessageService ,LinksService],

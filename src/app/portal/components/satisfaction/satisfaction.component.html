@@ -10,7 +10,7 @@
     <ng-template pTemplate="header">
         <span class="text-xl font-bold">Dejanos tu comentario</span>
     </ng-template>
-    <textarea rows="4" cols="80" pInputTextarea ></textarea>
+    <textarea  id="commentBox" rows="5" cols="40" pInputTextarea  [(ngModel)]="textValue" required></textarea>
 
     <ng-template pTemplate="footer">
         <p-button icon="pi pi-check" (click)="saveComment()" label="Guardar Comentario" styleClass="p-button-text"></p-button>
