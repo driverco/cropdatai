@@ -7,8 +7,9 @@ import { MapComponent } from './dashboard/components/map/map.component';
 import { DashboardComponent } from './dashboard/components/dashboard/dashboard.component';
 import { NewsComponent } from './dashboard/components/news/news.component';
 import { ModelsPredComponent } from './dashboard/components/modelspred/modelspred.component';
-import { AuthGuard, LoginGuard } from './portal/guard/auth.guard';
+import { AdminGuard, AuthGuard, LoginGuard } from './portal/guard/auth.guard';
 import { LoginComponent } from './portal/components/login/login.component';
+import { UsersComponent } from './portal/components/users/users.component';
 
 
 export const routes: Routes = [
@@ -21,6 +22,7 @@ export const routes: Routes = [
     { path: 'news', component: NewsComponent , canActivate:[AuthGuard]},
     { path: 'maps/:mapId', component: MapComponent, pathMatch: 'full' , canActivate:[AuthGuard] },
     { path: 'modelsai/:mapId', component: ModelsPredComponent, pathMatch: 'full'  , canActivate:[AuthGuard]},
+    { path: 'users', component: UsersComponent, pathMatch: 'full'  , canActivate:[AdminGuard]},
     { path: 'notfound', component: NotFoundComponent },
     { path: '**', redirectTo: '/notfound', pathMatch: 'full' }
 ];
