@@ -18,18 +18,25 @@ import { ImageModule } from 'primeng/image';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { PasswordModule } from 'primeng/password';
+import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from './services/auth.service';
+import { LoginComponent } from './components/login/login.component';
+import { UserdataComponent } from './components/userdata/userdata.component';
 
 @NgModule({
   declarations: [
   HomeComponent,
   MenuComponent,
   PortalComponent,
-  SatisfactionComponent
+  SatisfactionComponent,
+  LoginComponent,
+  UserdataComponent
   ],
   imports: [
-    CommonModule, 
-    SharedModule, 
+    CommonModule,
+    SharedModule,
     CardModule,
     ButtonModule,
     MenubarModule,
@@ -42,10 +49,11 @@ import { FormsModule } from '@angular/forms';
     ConfirmPopupModule,
     ConfirmDialogModule,
     InputTextareaModule,
-    FormsModule
-    
+    FormsModule,
+    PasswordModule,
+    InputTextModule
   ],
-  providers:[ConfirmationService, MessageService ,LinksService],
+  providers:[ConfirmationService, MessageService ,LinksService,AuthService],
   exports: [PortalComponent]
 })
 export class PortalModule {  }

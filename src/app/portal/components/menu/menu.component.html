@@ -1,29 +1,35 @@
 <div class="card">
-    <p-menubar [model]="items">
-        <ng-template pTemplate="start">
-            <a routerLink="home" class="noDecorator appName"> CropdatAI </a>
-        </ng-template>
-        <ng-template pTemplate="end">
-            <div class="flex flex-row flex-wrap">
-                <div class="flex-column">
-                    <portal-satisfaction />
-                </div>
-                <div class="p-2 flex-column">
-                    <i class="pi pi-bell text-2xl" (click)="showDialog()" pBadge value="1" severity="danger"></i>
-                </div>
-            </div>
+  <p-menubar [model]="items">
+    <ng-template pTemplate="start">
+      <a routerLink="/" class="noDecorator appName"> CropdatAI </a>
+    </ng-template>
 
-            <p-dialog [(visible)]="visible" position="top" [style]="{width: '90vw'}">
-                <p-header><p-avatar icon="pi pi-exclamation-triangle" styleClass="mr-2" shape="circle"
-                        [style]="{ 'background-color': '#f43333', color: '#ffffff' }"></p-avatar>
-                    Humedad de cultivo de Rosas 2 Baja
-                </p-header>
-                <p (click)="closeDialog('12')">
-                    El cultivo de Rosas 2 debe ser regado en las próximas horas, su humedad ha bajado
-                    considerablemente
-                </p>
-            </p-dialog>
+    <ng-template pTemplate="end">
+      <div *ngIf="auth">
 
-        </ng-template>
-    </p-menubar>
+        <div class="flex flex-row flex-wrap">
+          <div class="flex-column">
+            <portal-satisfaction />
+          </div>
+          <div class="p-2 flex-column">
+            <i class="pi pi-bell text-2xl" (click)="showDialog()" pBadge value="1" severity="danger"></i>
+          </div>
+          <div class="flex-column ml-2">
+            <portal-userdata></portal-userdata>
+          </div>
+        </div>
+      </div>
+
+      <p-dialog [(visible)]="visible" position="top" [style]="{width: '90vw'}">
+        <p-header><p-avatar icon="pi pi-exclamation-triangle" styleClass="mr-2" shape="circle"
+            [style]="{ 'background-color': '#f43333', color: '#ffffff' }"></p-avatar>
+          Humedad de cultivo de Rosas 2 Baja
+        </p-header>
+        <p (click)="closeDialog('12')">
+          El cultivo de Rosas 2 debe ser regado en las próximas horas, su humedad ha bajado
+          considerablemente
+        </p>
+      </p-dialog>
+    </ng-template>
+  </p-menubar>
 </div>

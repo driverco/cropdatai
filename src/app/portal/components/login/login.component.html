@@ -1,0 +1,31 @@
+<div class="flex justify-content-center flex-wrap">
+  <div class="flex align-items-center justify-content-center "><p-card header="Inicio de sesión"
+      subheader="Ingresa tu usuario y contraseña" [style]="{ width: '360px' }">
+      <p class="text-xs">
+        <b>cuenta demo usuario:</b><br />
+        usuario: crops<br />
+        contraseña: crops
+        <br /><br />
+        <b>cuenta demo admin:</b><br />
+        usuario: super<br />
+        contraseña: super
+      </p>
+      <p class="text-orange-600">
+        {{error}}
+      </p>
+      <br />
+      <span class="p-float-label">
+        <input pInputText id="username" [(ngModel)]="usernm" label="usuario" />
+        <label htmlFor="username">Usuario</label>
+      </span>
+      <br />
+      <span class="p-float-label">
+        <p-password [(ngModel)]="paswd" [feedback]="false"></p-password>
+        <label for="password">Contraseña</label>
+      </span>
+
+      <ng-template pTemplate="footer">
+        <p-button label="Iniciar sesión" icon="pi pi-user" (click)="login()"></p-button>
+      </ng-template>
+    </p-card></div>
+</div>
