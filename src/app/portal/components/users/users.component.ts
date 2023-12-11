@@ -1,62 +1,67 @@
 import { Component } from '@angular/core';
-import { Product } from '../../models/Product';
 import { MessageService, SelectItem } from 'primeng/api';
-import { ProductService } from '../../services/product.service';
+import { User } from '../../models/User';
+import { UsersService } from '../../services/users.service';
+import { AddRowDirective } from './users.addRowDirective';
 
 @Component({
   selector: 'portal-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css'],
 })
+
 export class UsersComponent {
-  products!: Product[];
+  users!: User[];
 
   statuses!: SelectItem[];
 
-  clonedProducts: { [s: string]: Product } = {};
+  clonedUsers: { [s: string]: User } = {};
 
   constructor(
-    private productService: ProductService,
+    private usersService: UsersService,
     private messageService: MessageService
   ) {}
 
   ngOnInit() {
-    this.productService.getProductsMini().then((data) => {
-      this.products = data;
+    this.usersService.getUsers().then((data) => {
+      this.users = data;
     });
 
     this.statuses = [
-      { label: 'In Stock', value: 'INSTOCK' },
-      { label: 'Low Stock', value: 'LOWSTOCK' },
-      { label: 'Out of Stock', value: 'OUTOFSTOCK' },
+      { label: 'Usuario', value: 'user' },
+      { label: 'Administrador', value: 'admin' },
     ];
   }
 
-  onRowEditInit(product: Product) {
-    this.clonedProducts[product.id as string] = { ...product };
+  onRowEditInit(user: User) {
+    this.clonedUsers[user.username as string] = { ...user };
   }
 
-  onRowEditSave(product: Product) {
-    if (product.price !== undefined) {
-      if (product.price > 0) {
-        delete this.clonedProducts[product.id as string];
+  onRowEditSave(user: User) {
+    if (user.username !== undefined) {
+      if (user.fullname !== undefined) {
+        delete this.clonedUsers[user.username as string];
         this.messageService.add({
           severity: 'success',
           summary: 'Success',
-          detail: 'Product is updated',
+          detail: 'user is updated',
         });
       } else {
         this.messageService.add({
           severity: 'error',
           summary: 'Error',
-          detail: 'Invalid Price',
+          detail: 'Invalid username',
         });
       }
     }
   }
 
-  onRowEditCancel(product: Product, index: number) {
-    this.products[index] = this.clonedProducts[product.id as string];
-    delete this.clonedProducts[product.id as string];
+  onRowEditCancel(user: User, index: number) {
+    this.users[index] = this.clonedUsers[user.username as string];
+    delete this.clonedUsers[user.username as string];
+  }
+
+  newRow(){
+    return {"username":"", "fullname":"", "role":"user","password":""};
   }
 }

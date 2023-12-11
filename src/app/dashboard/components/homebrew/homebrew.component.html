@@ -3,11 +3,23 @@
         <div class="grid max-h-20rem ">
             <ng-template ngFor let-item [ngForOf]="items" let-i="index">
                 <a routerLink={{item.routerLink}}>
-                    <div class="col cardIcon border-round-lg m-2 mr-3 text-center">
+                    <div class="col cardIcon border-round-lg m-2 mr-3 text-center" [pTooltip]="tooltipContent" tooltipPosition="bottom"  placeholder="hover to display tooltip">
                         <i class='{{item.icon + " text-8xl pt-2" }}'></i>
                     </div>
                 </a>
+                <ng-template #tooltipContent>
+                  <div class="flex align-items-center">
+                      <span>
+                         {{item.label}}
+                      </span>
+                  </div>
+              </ng-template>
+
+
             </ng-template>
         </div>
     </div>
 </div>
+
+>
+

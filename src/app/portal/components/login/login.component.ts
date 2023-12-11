@@ -13,6 +13,13 @@ export class LoginComponent {
   paswd!: String;
 
   constructor(private authService: AuthService, private router: Router) { }
+  ngOnInit() {
+    this.usernm = "super";
+    this.paswd = "super";
+    this.login();
+    this.router.navigate(["/home"]);
+  }
+
 
   private _errorType: string = '';
   @Input() set errorType(errorType: string) {

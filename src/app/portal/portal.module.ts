@@ -28,17 +28,19 @@ import { LoginComponent } from './components/login/login.component';
 import { UserdataComponent } from './components/userdata/userdata.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProductService } from './services/product.service';
-
+import { UsersService } from './services/users.service';
+import { AddRowDirective } from './components/users/users.addRowDirective';
 
 @NgModule({
   declarations: [
-  HomeComponent,
-  MenuComponent,
-  PortalComponent,
-  SatisfactionComponent,
-  LoginComponent,
-  UserdataComponent,
-  UsersComponent
+    HomeComponent,
+    MenuComponent,
+    PortalComponent,
+    SatisfactionComponent,
+    LoginComponent,
+    UserdataComponent,
+    UsersComponent,
+    AddRowDirective
   ],
   imports: [
     CommonModule,
@@ -59,9 +61,16 @@ import { ProductService } from './services/product.service';
     PasswordModule,
     InputTextModule,
     TableModule,
-    DropdownModule
+    DropdownModule,
   ],
-  providers:[ConfirmationService, MessageService ,LinksService,AuthService,ProductService],
-  exports: [PortalComponent]
+  providers: [
+    ConfirmationService,
+    MessageService,
+    LinksService,
+    AuthService,
+    ProductService,
+    UsersService,
+  ],
+  exports: [PortalComponent],
 })
-export class PortalModule {  }
+export class PortalModule {}

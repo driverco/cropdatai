@@ -1,62 +1,68 @@
+<p-card header="Administración de Usuarios:" subheader="Aquí puedes editar, crear, y borrar Usuarios.">
+  <ng-template pTemplate="footer">
+      <p-button label="Agregar usuario" pAddRow [table]="usr" [newRow]="newRow()"  ></p-button>
+  </ng-template>
+</p-card>
+
 <div class="card">
   <p-toast></p-toast>
-  <p-table [value]="products" dataKey="id" editMode="row" [tableStyle]="{'min-width': '50rem'}">
+  <p-table #usr [value]="users" dataKey="username" editMode="row" [tableStyle]="{'min-width': '50rem'}">
       <ng-template pTemplate="header">
           <tr>
-              <th style="width:20%">Code</th>
-              <th style="width:20%">Name</th>
-              <th style="width:20%">Inventory Status</th>
-              <th style="width:20%">Price</th>
-              <th style="width:20%"></th>
+              <th style="width:20%">Usuario</th>
+              <th style="width:20%">Nombre</th>
+              <th style="width:20%">Rol</th>
+              <th style="width:20%">Contraseña</th>
+              <th style="width:20%">Acciones</th>
           </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-product let-editing="editing" let-ri="rowIndex">
-          <tr [pEditableRow]="product">
+      <ng-template pTemplate="body" let-user let-editing="editing" let-ri="rowIndex">
+          <tr [pEditableRow]="user">
               <td>
                   <p-cellEditor>
                       <ng-template pTemplate="input">
-                          <input pInputText type="text" [(ngModel)]="product.code">
+                          <input pInputText type="text" [(ngModel)]="user.username">
                       </ng-template>
                       <ng-template pTemplate="output">
-                          {{product.code}}
+                          {{user.username}}
                       </ng-template>
                   </p-cellEditor>
               </td>
               <td>
                   <p-cellEditor>
                       <ng-template pTemplate="input">
-                          <input pInputText type="text" [(ngModel)]="product.name" required>
+                          <input pInputText type="text" [(ngModel)]="user.fullname" required>
                       </ng-template>
                       <ng-template pTemplate="output">
-                          {{product.name}}
+                          {{user.fullname}}
                       </ng-template>
                   </p-cellEditor>
               </td>
               <td>
                   <p-cellEditor>
                       <ng-template pTemplate="input">
-                          <p-dropdown [options]="statuses" appendTo="body" [(ngModel)]="product.inventoryStatus" [style]="{'width':'100%'}"></p-dropdown>
+                          <p-dropdown [options]="statuses" appendTo="body" [(ngModel)]="user.role" [style]="{'width':'100%'}"></p-dropdown>
                       </ng-template>
                       <ng-template pTemplate="output">
-                          {{product.inventoryStatus}}
+                          {{user.role}}
                       </ng-template>
                   </p-cellEditor>
               </td>
               <td>
                   <p-cellEditor>
                       <ng-template pTemplate="input">
-                          <input pInputText type="text" [(ngModel)]="product.price">
+                          <input pInputText type="password" [(ngModel)]="user.password">
                       </ng-template>
                       <ng-template pTemplate="output">
-                          {{product.price | currency: 'USD'}}
+                          {{user.password}}
                       </ng-template>
                   </p-cellEditor>
               </td>
               <td>
                   <div class="flex align-items-center justify-content-center gap-2">
-                      <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(product)" class="p-button-rounded p-button-text"></button>
-                      <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(product)" class="p-button-rounded p-button-text p-button-success mr-2"></button>
-                      <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(product, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                      <button *ngIf="!editing" pButton pRipple title="edit" type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(user)" class="p-button-rounded p-button-text"></button>
+                      <button *ngIf="editing" pButton pRipple title="done" type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(user)" class="p-button-rounded p-button-text p-button-success mr-2"></button>
+                      <button *ngIf="editing" pButton pRipple title="cancel" type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(user, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
                   </div>
               </td>
           </tr>
